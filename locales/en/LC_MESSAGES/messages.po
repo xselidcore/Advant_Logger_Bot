@@ -22,13 +22,17 @@ msgstr ""
 msgid "⚠ All your data was cleared because of disconnecting"
 msgstr ""
 
-#: main.py:67 main.py:80
+#: main.py:67
 msgid ""
-"Hello, <b><a href='tg://user?id={user_id}'>{name}</a></b>!\n"
-"I will help you to log editing and deleting messages done by another "
-"users!\n"
+"<tg-emoji emoji-id=\"5343584360182349563\">➕</tg-emoji> <b>Бот успешно подключён!</b>\n"
+"Привет, <b><a href='tg://user?id={user_id}'>{name}</a></b>!\n"
 "\n"
+"Теперь я буду отслеживать изменения и удаления сообщений в твоих переписках."
 msgstr ""
+"<tg-emoji emoji-id=\"5343584360182349563\">➕</tg-emoji> <b>Bot connected!</b>\n"
+"Hello, <b><a href='tg://user?id={user_id}'>{name}</a></b>!\n"
+"\n"
+"Now I will track edits and deletions of messages in your chats."
 
 #: handlers/deleting.py:36
 msgid ""
