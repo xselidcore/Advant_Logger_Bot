@@ -28,6 +28,7 @@ def parse_config_file(config_file: str) -> Dict[str, Dict[str, Any]]:
 
 class BotConfig(BaseModel):
     token: str
+    admin_id: int
 
 
 class DatabaseConfig(BaseModel):
