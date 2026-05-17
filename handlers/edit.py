@@ -54,9 +54,9 @@ async def text_edit(bm: Message, bot: Bot, repo: Repo) -> None:
         user_link = "https://t.me/" + bm.chat.username
 
     text = _("<tg-emoji emoji-id=\"5301173701323028420\">✏️</tg-emoji> <b>Edit  ·  <a href='{user_link}'>{name}</a></b>"
-             "\n\n<i>was</i>"
+             "\n\n<i>Was</i>"
              "<blockquote expandable>{old_msg}</blockquote>"
-             "<i>now</i>"
+             "<i>Now</i>"
              "<blockquote expandable>{new_msg}</blockquote>",
              locale=user.language).format(user_link=user_link,
                                           name=bm.chat.full_name,
@@ -90,9 +90,9 @@ async def media_edit(bm: Message, bot: Bot, repo: Repo) -> None:
         user_link = "https://t.me/" + bm.chat.username
 
     text = _("<tg-emoji emoji-id=\"5301173701323028420\">✏️</tg-emoji> <b>Edit  ·  <a href='{user_link}'>{name}</a></b>"
-             "\n\n<i>was</i>"
+             "\n\n<i>Was</i>"
              "<blockquote expandable>{old_msg}</blockquote>"
-             "<i>now</i>"
+             "<i>Now</i>"
              "<blockquote expandable>{new_msg}</blockquote>",
              locale=user.language).format(user_link=user_link,
                                           name=bm.chat.full_name,
