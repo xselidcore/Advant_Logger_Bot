@@ -70,13 +70,22 @@ async def connection_handler(bc: BusinessConnection, bot: Bot) -> None:
                                 language=bc.user.language_code))
     if s:
         logger.info("New user registered: %s (%d)", bc.user.full_name, bc.user.id)
-        text = _("Hello, <b><a href='tg://user?id={user_id}'>{name}</a></b>!"
-                 "\nI will help you to log editing and deleting messages done by another users!").format(
-            name=bc.user.full_name,
-            user_id=bc.user.id)
+        await bot.send_message(
+            chat_id=config.BOT.admin_id,
+            text=f"<tg-emoji emoji-id=\"5343584360182349563\">➕</tg-emoji> Новый пользователь\n"
+                f"<b><a href='tg://user?id={bc.user.id}'>{bc.user.full_name}</a></b>\n"
+                f"ID: <code>{bc.user.id}</code>"
+        )
+
+        text = _("<tg-emoji emoji-id=\"5343584360182349563\">➕</tg-emoji> <b>Бот успешно подключён!</b>\n"
+            "Привет, <b><a href='tg://user?id={user_id}'>{name}</a></b>!\n\n"
+            "Теперь я буду отслеживать изменения и удаления сообщений в твоих переписках.").format(
+        name=bc.user.full_name,
+        user_id=bc.user.id)
         await bot.send_photo(chat_id=bc.user.id,
                              caption=text,
-                             photo=FSInputFile("images/welcome.png"))
+                             photo=FSInputFile("images/bot_connected.png"))
+                             
 
 
 @dp.message(ContentTypeFilter(ContentType.TEXT,))
